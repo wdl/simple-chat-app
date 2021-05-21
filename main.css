@@ -1,0 +1,276 @@
+html {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    padding: 20px 0;
+    height: calc(100% - 40px);
+    background-color: #404040;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+     user-select: none;
+}
+#loading.loading-now {
+    display: flex;
+}
+
+#wrapper {
+    margin: 0 auto;
+    height: 100%;
+    max-width: 674px;
+    background-color: #202020;
+    border-radius: 20px;
+    position: relative;
+}
+
+header {
+    width: calc(100% - 30px);
+    height: 50px;
+    padding: 15px;
+    position: absolute;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgba(24, 24, 24, 0.95);
+    display: table;
+    text-align: center;
+    z-index: 1000;
+}
+
+header > div.status {
+    display: table-cell;
+    width: 50px;
+}
+header > div.title {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 18pt;
+    color: white;
+}
+header > div.profile {
+    display: table-cell;
+}
+
+main {
+    width: calc(100% - 40px);
+    padding: 90px 20px 8px 20px;
+    height: calc(100% - 80px - 90px);
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+main::-webkit-scrollbar {
+    display: none;
+}
+
+nav.go-down {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    display: none;
+    bottom: 84px;
+    right: 12px;
+    border: 1px solid #202020;
+    border-radius: 26px;
+    background-color: #404040;
+    cursor: pointer;
+}
+nav.go-down.active {
+    display: inline-block;
+}
+nav.go-down > .image {
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+}
+nav.go-down > .image > img {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: calc(100% - 40px);
+    height: 30px;
+    border-top: 2px solid #404040;
+}
+
+footer > div {
+    float: left;
+}
+
+footer div.text {
+    width: calc(100% - 50px - 10px);
+}
+
+footer div.text input {
+    width: calc(100% - 10px - 14px);
+    height: 26px;
+    padding: 0 7px;
+    font-size: 12pt;
+    background-color: #EEE;
+    border-radius: 5px;
+}
+
+footer div.text input:focus {
+    outline: 0;
+}  
+  
+
+footer div.send {
+    width: 50px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+footer div.send span.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px 0;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px - 2px);
+    border-radius: 3px;
+    color: #606060;
+    background-color: #D0D0D0;
+    border: 1px solid #D0D0D0;
+}
+
+footer div.send span.send-button.activate {
+    color: #202020;
+    background-color: rgb(255, 236, 66);
+    border: 1px solid rgba(255, 236, 66, 0.5);
+    cursor: pointer;
+}
+
+article {
+    display: table;
+    margin-top: 5px;
+    max-width: calc(100% - 10px);
+    color: #EEE;
+}
+
+article.gap {
+    margin-top: 10px;
+}
+
+article > div {
+    display: table-cell;
+}
+
+div.profile {
+    width: 50px;
+}
+div.profile > div.image {
+    margin-top: 5px;
+    width: 50px;
+    height: 50px; 
+    border-radius: 70%;
+    overflow: hidden;
+}
+div.profile > div.image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+article div.body {
+    padding: 0 7px 0 10px;
+    vertical-align: top
+}
+
+article.other div.body > div.nick {
+    width: 0;
+    margin-bottom: 5px;
+}
+
+article.other div.body > div.nick > span {
+    white-space: nowrap;
+}
+
+article.me {
+    text-align: right;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+article.me div.body {
+    padding: 0 0 0 7px;
+}
+
+div.comment {
+    display: inline-block;
+    overflow: auto;
+    padding: 10px;
+    background-color: #EEE;
+    color: #222;
+    border-radius: 10px;
+    word-break: break-all;
+    text-align: left;
+}
+
+article.other div.comment {
+    border-top-left-radius: 0;
+}
+
+article.me div.comment {
+    border-top-right-radius: 0;
+    background-color: rgb(150, 160, 255) ;
+}
+
+div.time {
+    width: 65px;
+    height: 100%;
+    font-size: 10pt;
+    vertical-align: bottom;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 0;
+        height: 100%;
+        background-color: #202020;
+    }
+    header {
+        width: calc(100% - 20px);
+        height: 30px;
+        padding: 10px;
+        border-radius: 0px;
+    }
+    header > div.status {
+        width: 30px;
+    }
+    header > div.profile {
+        width: 30px;
+    }
+    header > div.profile > div.image {
+        width: 30px;
+        height: 30px;
+    }
+    main {
+        height: calc(100% - 55px - 80px);
+        padding: 55px 20px 8px 20px;
+    }
+    section {
+        width: calc(100% - 10px);
+    }
+}

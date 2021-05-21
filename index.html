@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <div class="status"></div>
+                <div class="title"></div>
+                <div class="profile">
+                    <div class="image">
+                        <img src="" />
+                    </div>
+                </div>
+            </header>
+            <main onscroll="setAutoScroll()">
+            </main>
+            <nav class="go-down" onclick="goScrollDown()">
+                <div class="image">
+                    <img src="/static/down.svg" />
+                </div>
+            </nav>
+            <footer>
+                <div class="text">
+                    <input type="text" id="comment" onkeydown="checkActive(event)" onfocus="setAutoScroll()" autocomplete="off" />
+                </div>
+                <div class="send">
+                    <span class="send-button" onclick="writeData()">전송</span>
+                </div>
+            </footer>
+        </div>
+        <div id="loading">
+            <img src="static/loading.svg" />
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
